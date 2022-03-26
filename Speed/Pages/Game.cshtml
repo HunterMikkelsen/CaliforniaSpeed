@@ -1,0 +1,56 @@
+﻿@page
+@model Speed.Pages.GameModel
+@{
+    ViewData["Title"] = "Speed";
+}
+
+<div>
+    <h1>Game</h1>
+    <h5>Player One Hand</h5>
+    @foreach(var card in Model.PlayerOneHand)
+    {
+        <p>@card.Name - @card.Suit - @card.Image</p>
+    }
+
+    <h5>Player One Deck</h5>
+    @foreach(var card in Model.PlayerOneDeck)
+    {
+        <p>@card.Name - @card.Suit - @card.Image</p>
+    }
+
+    <h5>Pick Pile One</h5>
+    @foreach(var card in Model.PickPileOne)
+    {
+        <p>@card.Name - @card.Suit - @card.Image</p>
+    }
+
+    <h5>Play Pile One</h5>
+    @foreach(var card in Model.PlayPileOne)
+    {
+        <p>@card.Name - @card.Suit - @card.Image</p>
+    }
+
+    <h5>Play Pile Two</h5>
+    @foreach(var card in Model.PlayPileTwo)
+    {
+        <p>@card.Name - @card.Suit - @card.Image</p>
+    }
+
+    <h5>Pick Pile Two</h5>
+    @foreach(var card in Model.PickPileTwo)
+    {
+        <p>@card.Name - @card.Suit - @card.Image</p>
+    }
+
+    <h5>Player Two Hand</h5>
+    @foreach(var card in Model.PlayerTwoHand)
+    {
+        <p>@card.Name - @card.Suit - @card.Image</p>
+    }
+
+    <h5>Player Two Deck</h5>
+    @foreach(var card in Model.PlayerTwoDeck)
+    {
+        <p>@card.Name - @card.Suit - @card.Image</p>
+    }
+</div>
