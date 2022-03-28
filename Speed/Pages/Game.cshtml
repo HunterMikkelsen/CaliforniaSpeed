@@ -6,13 +6,13 @@
 
 <div class="row">
     <!--Player one's deck of cards-->
-    <div class="col">
-        <img class="img-fluid" src="../lib/cards/card_back.png"/>
+    <div class="col col-md-2 col-sm-2" style="background-image: url('../lib/cards/card_back.png'); background-repeat: no-repeat; background-size: contain; background-position: center;">
+        <h1 class="text-center text-white" style="margin: 50% auto;">@Model.PlayerOneDeck.Count</h1>
     </div>
     <!--Player one's hand of cards-->
     @foreach(var card in Model.PlayerOneHand)
     {
-        <div class="col">
+        <div class="col col-md-2 col-sm-2">   
             <img class="img-fluid" src="../lib/cards/@card.Image"/>
         </div>
     }   
@@ -21,25 +21,25 @@
 <br />
 <div class="row">
     <!--Pick Pile One-->
-    <div class="col-md">
+    <div class="col col-md-2 col-sm-2 offset-2">
         <img class="img-fluid" src="../lib/cards/card_back.png"/>
     </div>
     <!--Play Pile One-->
     @foreach(var card in Model.PlayPileOne)
     {
-        <div class="col-md">
+        <div class="col col-md-2 col-sm-2">
             <img class="img-fluid" src="../lib/cards/@card.Image"/>
         </div>
     }   
     <!--Play Pile Two-->
     @foreach(var card in Model.PlayPileTwo)
     {
-        <div class="col-md">
+        <div class="col col-md-2 col-sm-2">
             <img class="img-fluid" src="../lib/cards/@card.Image"/>
         </div>
     }   
     <!--Pick Pile Two-->
-    <div class="col-md">
+    <div class="col col-md-2 col-sm-2">
         <img class="img-fluid" src="../lib/cards/card_back.png"/>
     </div>
 </div>
@@ -51,12 +51,12 @@
     <!--Player two's hand of cards-->
     @foreach(var card in Model.PlayerTwoHand)
     {
-        <div class="col">
+        <div class="col col-md-2 col-sm-2">
             <img class="img-fluid" src="../lib/cards/@card.Image"/>
         </div>
     } 
     <!--Player two's deck of cards-->
-    <div class="col">
-        <img class="img-fluid" src="../lib/cards/card_back.png"/>
+     <div class="col col-md-2 col-sm-2" style="background-image: url('../lib/cards/card_back.png'); background-repeat: no-repeat; background-size: contain; background-position: center;">
+        <h1 class="text-center text-white" style="margin: 50% auto;">@Model.PlayerTwoDeck.Count</h1>
     </div>  
 </div>
