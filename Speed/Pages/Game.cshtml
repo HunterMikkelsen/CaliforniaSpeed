@@ -4,53 +4,59 @@
     ViewData["Title"] = "Speed";
 }
 
-<div>
-    <h1>Game</h1>
-    <h5>Player One Hand: @Model.PlayerOneHand.Count Cards</h5>
+<div class="row">
+    <!--Player one's deck of cards-->
+    <div class="col">
+        <img class="img-fluid" src="../lib/cards/card_back.png"/>
+    </div>
+    <!--Player one's hand of cards-->
     @foreach(var card in Model.PlayerOneHand)
     {
-        <p>@card.Name - @card.Suit - @card.Image</p>
-    }
-
-    <h5>Player One Deck: @Model.PlayerOneDeck.Count Cards</h5>
-    @foreach(var card in Model.PlayerOneDeck)
-    {
-        <p>@card.Name - @card.Suit - @card.Image</p>
-    }
-
-    <h5>Pick Pile One: @Model.PickPileOne.Count Cards</h5>
-    @foreach(var card in Model.PickPileOne)
-    {
-        <p>@card.Name - @card.Suit - @card.Image</p>
-    }
-
-    <h5>Play Pile One: @Model.PlayPileOne.Count Cards</h5>
+        <div class="col">
+            <img class="img-fluid" src="../lib/cards/@card.Image"/>
+        </div>
+    }   
+</div>
+<br />
+<br />
+<div class="row">
+    <!--Pick Pile One-->
+    <div class="col-md">
+        <img class="img-fluid" src="../lib/cards/card_back.png"/>
+    </div>
+    <!--Play Pile One-->
     @foreach(var card in Model.PlayPileOne)
     {
-        <p>@card.Name - @card.Suit - @card.Image</p>
-    }
-
-    <h5>Play Pile Two: @Model.PlayPileTwo.Count Cards</h5>
+        <div class="col-md">
+            <img class="img-fluid" src="../lib/cards/@card.Image"/>
+        </div>
+    }   
+    <!--Play Pile Two-->
     @foreach(var card in Model.PlayPileTwo)
     {
-        <p>@card.Name - @card.Suit - @card.Image</p>
-    }
+        <div class="col-md">
+            <img class="img-fluid" src="../lib/cards/@card.Image"/>
+        </div>
+    }   
+    <!--Pick Pile Two-->
+    <div class="col-md">
+        <img class="img-fluid" src="../lib/cards/card_back.png"/>
+    </div>
+</div>
 
-    <h5>Pick Pile Two: @Model.PickPileTwo.Count Cards</h5>
-    @foreach(var card in Model.PickPileTwo)
-    {
-        <p>@card.Name - @card.Suit - @card.Image</p>
-    }
+<br />
+<br />
 
-    <h5>Player Two Hand: @Model.PlayerTwoHand.Count Cards</h5>
+<div class="row">
+    <!--Player two's hand of cards-->
     @foreach(var card in Model.PlayerTwoHand)
     {
-        <p>@card.Name - @card.Suit - @card.Image</p>
-    }
-
-    <h5>Player Two Deck: @Model.PlayerTwoDeck.Count Cards</h5>
-    @foreach(var card in Model.PlayerTwoDeck)
-    {
-        <p>@card.Name - @card.Suit - @card.Image</p>
-    }
+        <div class="col">
+            <img class="img-fluid" src="../lib/cards/@card.Image"/>
+        </div>
+    } 
+    <!--Player two's deck of cards-->
+    <div class="col">
+        <img class="img-fluid" src="../lib/cards/card_back.png"/>
+    </div>  
 </div>
