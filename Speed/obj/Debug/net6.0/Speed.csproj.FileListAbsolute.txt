@@ -77,3 +77,4 @@ C:\Users\dorga\OneDrive\Documents\WSUHomework\Spring2022\CS3750\Speed\CS3750_Spe
 C:\Users\dorga\OneDrive\Documents\WSUHomework\Spring2022\CS3750\Speed\CS3750_Speed\Speed\obj\Debug\net6.0\Speed.genruntimeconfig.cache
 C:\Users\dorga\OneDrive\Documents\WSUHomework\Spring2022\CS3750\Speed\CS3750_Speed\Speed\obj\Debug\net6.0\ref\Speed.dll
 C:\Users\dorga\OneDrive\Documents\WSUHomework\Spring2022\CS3750\Speed\CS3750_Speed\Speed\bin\Debug\net6.0\libman.json
+C:\Users\chase\Documents\School\CS 3750\CS3750_Speed\Speed\bin\Debug\net6.0\libman.json
