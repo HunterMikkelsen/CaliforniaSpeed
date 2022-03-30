@@ -8,20 +8,30 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\chase\\.nuget\\packages\\": {}
+    "C:\\Users\\dorga\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chase\\Documents\\School\\CS 3750\\CS3750_Speed\\Speed\\Speed.csproj",
+      "projectUniqueName": "C:\\Users\\dorga\\OneDrive\\Documents\\WSUHomework\\Spring2022\\CS3750\\Speed\\CS3750_Speed\\Speed\\Speed.csproj",
       "projectName": "Speed",
-      "projectPath": "C:\\Users\\chase\\Documents\\School\\CS 3750\\CS3750_Speed\\Speed\\Speed.csproj",
-      "packagesPath": "C:\\Users\\chase\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chase\\Documents\\School\\CS 3750\\CS3750_Speed\\Speed\\obj\\",
+      "projectPath": "C:\\Users\\dorga\\OneDrive\\Documents\\WSUHomework\\Spring2022\\CS3750\\Speed\\CS3750_Speed\\Speed\\Speed.csproj",
+      "packagesPath": "C:\\Users\\dorga\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dorga\\OneDrive\\Documents\\WSUHomework\\Spring2022\\CS3750\\Speed\\CS3750_Speed\\Speed\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\chase\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\dorga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
