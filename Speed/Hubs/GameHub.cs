@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.SignalR;
-using System.Threading.Tasks;
-using Speed.Pages;
+using Speed.GameLogic;
 
 namespace Speed.Hubs
 {
     public class GameHub : Hub
     {
+        public Game game { get; set; }
+
         public async Task SendMessage(string user, string message)
         {
             // sends to all endpoints
