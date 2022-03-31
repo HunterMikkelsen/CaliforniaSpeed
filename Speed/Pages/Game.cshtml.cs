@@ -69,3 +69,66 @@ namespace Speed.Pages
         }
     }
 }
+
+//public Game game { get; set; }
+//public string player_one { get; set; }
+//public string player_two { get; set; }
+//private IHubContext<GameHub> _hubContext;
+
+//public GameModel(IHubContext<GameHub> hubContext)
+//{
+//    _hubContext = hubContext;
+
+
+//}
+//public void OnGet()
+//{
+//}
+
+//public async Task JoinGame(string connectionId)
+//{
+//    if (game == null)
+//    {
+//        game = new Game();
+//    }
+
+//    if (string.IsNullOrEmpty(player_one))
+//    {
+//        player_one = connectionId;
+//        await _hubContext.Clients.Client(player_one).SendAsync("UpdatePlayer", "player_one");
+//    }
+//    else if (string.IsNullOrEmpty(player_two))
+//    {
+//        player_two = connectionId;
+//        await _hubContext.Clients.Client(player_two).SendAsync("UpdatePlayer", "player_two");
+//    }
+//}
+
+//public async Task StartGame(string connectionId)
+//{
+//    if ((!string.IsNullOrEmpty(player_one)) && (!string.IsNullOrEmpty(player_two)))
+//    {
+//        var my_hand = new string[5];
+//        var my_count = 0;
+//        var play_one = "";
+//        var play_two = "";
+//        var other_count = 0;
+//        if (connectionId == player_one)
+//        {
+//            my_hand = game.getHand(player_one).ToArray();
+//            my_count = game.PlayerOneDeck.Count();
+//            play_one = game.PlayPileOne[0].Image;
+//            play_two = game.PlayPileTwo[0].Image;
+//            other_count = game.PlayerTwoDeck.Count();
+//        }
+//        else if (connectionId == player_two)
+//        {
+//            my_hand = game.getHand(player_two).ToArray();
+//            my_count = game.PlayerTwoDeck.Count();
+//            play_one = game.PlayPileOne[0].Image;
+//            play_two = game.PlayPileTwo[0].Image;
+//            other_count = game.PlayerOneDeck.Count();
+//        }
+//        await _hubContext.Clients.Client(connectionId).SendAsync("UpdateGame", my_hand, my_count, play_one, play_two, other_count);
+//    }
+//}
