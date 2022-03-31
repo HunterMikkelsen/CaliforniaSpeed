@@ -16,11 +16,13 @@ namespace Speed.Hubs
             if (string.IsNullOrEmpty(player_one) || player_one == token)
             {
                 player_one = token;
+                await Groups.AddToGroupAsync(Context.ConnectionId, "player_one");
                 await Clients.Caller.SendAsync("UpdatePlayer", "player_one");
             }
             else if (string.IsNullOrEmpty(player_two) || player_two == token)
             {
                 player_two = token;
+                await Groups.AddToGroupAsync(Context.ConnectionId, "player_two");
                 await Clients.Caller.SendAsync("UpdatePlayer", "player_two");
             }
         }
@@ -32,30 +34,17 @@ namespace Speed.Hubs
                 game = new Game();
             }
             if ((!string.IsNullOrEmpty(player_one)) && (!string.IsNullOrEmpty(player_two))) {
-                var my_hand = new string[5];
-                var my_count = 0;
-                var play_one = "";
-                var play_two = "";
-                var other_count = 0;
-                if (token.Equals("player_one"))
-                {
-                    my_hand = game.getHand(player_one).ToArray();
-                    my_count = game.PlayerOneDeck.Count();
-                    play_one = game.PlayPileOne[0].Image;
-                    play_two = game.PlayPileTwo[0].Image;
-                    other_count = game.PlayerTwoDeck.Count();
-                }
-                else if (token.Equals("player_two"))
-                {
-                    my_hand = game.getHand(player_two).ToArray();
-                    my_count = game.PlayerTwoDeck.Count();
-                    play_one = game.PlayPileOne[0].Image;
-                    play_two = game.PlayPileTwo[0].Image;
-                    other_count = game.PlayerOneDeck.Count();
-                }
-                    await Clients.Caller.SendAsync("UpdateGame", my_hand, my_count, play_one, play_two, other_count);
+                var one_hand = game.getHand("player_one");
+                var two_hand = game.getHand("player_two");
+                var one_count = game.PlayerOneDeck.Count();
+                var two_count = game.PlayerTwoDeck.Count();
+                var play_one = game.PlayPileOne[0].Image;
+                var play_two = game.PlayPileTwo[0].Image;
+
+                await Clients.Group("player_one").SendAsync("UpdateGame", one_hand, one_count, play_one, play_two, two_count);
+                await Clients.Group("player_two").SendAsync("UpdateGame", two_hand, two_count, play_two, play_one, one_count);
             }
-            await Clients.Caller.SendAsync("UpdatePlayer", "player_one");
+            
         }
 
         public async Task SendMessage(string user, string message)

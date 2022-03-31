@@ -9,10 +9,11 @@ document.getElementById("game_div").style = "display: none;";
 
 connection.on("UpdatePlayer", function (player_number) {
     player = player_number;
+    connectionId = connection.connectionId;
     if (player == "player_one" || player == "player_two") {
         document.getElementById("game_div").style = "";
         document.getElementById("waiting_for_game").style = "display: none;";
-        connection.invoke("StartGame", player)
+        connection.invoke("StartGame", player);
     }
 });
 
@@ -31,7 +32,7 @@ connection.on("UpdateGame", function (my_hand, my_count, play_one, play_two, opp
 
 connection.start().then(function () {
     //connectionId = connection.connection.connectionId;
-    connection.invoke('JoinGame', connectionId)
+    connection.invoke('JoinGame', connection.connectionId);
 }).catch(function (err) {
     return console.error(err.toString());
 });
