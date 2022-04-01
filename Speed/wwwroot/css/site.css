@@ -36,8 +36,12 @@ body {
     position: relative;
 }
 
-    .drop-item .remove {
-        position: absolute;
-        top: 4px;
-        right: 4px;
-    }
+.drop-item .remove {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}
+
+.ui-draggable-dragging {
+    max-width: 6rem;
+}

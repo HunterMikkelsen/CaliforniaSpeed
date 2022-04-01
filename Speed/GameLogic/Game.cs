@@ -160,7 +160,7 @@
 
         public bool IsValidPlay(int card_value, int pile_value)
         {
-            if (card_value - 1 % 13 == pile_value || card_value + 1 % 13 == pile_value)
+            if ((card_value + 1) % 13 == pile_value || (pile_value + 1) % 13 == card_value)
             {
                 return true;
             }
@@ -180,23 +180,23 @@
         {
             if (name == "ace")
             {
-                Value = 1;
+                Value = 0;
             }
             else if (name == "jack")
             {
-                Value = 11;
+                Value = 10;
             }
             else if (name == "queen")
             {
-                Value = 12;
+                Value = 11;
             }
             else if (name == "king")
             {
-                Value = 13;
+                Value = 12;
             }
             else
             {
-                Value = int.Parse(name);
+                Value = int.Parse(name) - 1;
             }
             Name = name;
             Suit = suit;
