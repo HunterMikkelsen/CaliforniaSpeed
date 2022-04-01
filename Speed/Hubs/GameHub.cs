@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.SignalR;
+﻿using Microsoft.AspNet.SignalR.Hubs;
+using Microsoft.AspNetCore.SignalR;
 using Speed.GameLogic;
 
 namespace Speed.Hubs
 {
+    [HubName("GameHub")]
     public class GameHub : Hub
     {
        
@@ -34,17 +36,31 @@ namespace Speed.Hubs
                 game = new Game();
             }
             if ((!string.IsNullOrEmpty(player_one)) && (!string.IsNullOrEmpty(player_two))) {
-                var one_hand = game.getHand("player_one");
-                var two_hand = game.getHand("player_two");
+                var one_hand = game.GetHand("player_one");
+                var two_hand = game.GetHand("player_two");
                 var one_count = game.PlayerOneDeck.Count();
                 var two_count = game.PlayerTwoDeck.Count();
-                var play_one = game.PlayPileOne[0].Image;
-                var play_two = game.PlayPileTwo[0].Image;
+                var play_one = game.PlayPileOne.Last().Image;
+                var play_two = game.PlayPileTwo.Last().Image;
 
                 await Clients.Group("player_one").SendAsync("UpdateGame", one_hand, one_count, play_one, play_two, two_count);
                 await Clients.Group("player_two").SendAsync("UpdateGame", two_hand, two_count, play_two, play_one, one_count);
             }
             
+        }
+
+        public async Task PlayCard(string player_number, string hand_index, string play_pile)
+        {
+            game.PlayCard(player_number, int.Parse(hand_index), play_pile);
+            var one_hand = game.GetHand("player_one");
+            var two_hand = game.GetHand("player_two");
+            var one_count = game.PlayerOneDeck.Count();
+            var two_count = game.PlayerTwoDeck.Count();
+            var play_one = game.PlayPileOne.Last().Image;
+            var play_two = game.PlayPileTwo.Last().Image;
+
+            await Clients.Group("player_one").SendAsync("UpdateGame", one_hand, one_count, play_one, play_two, two_count);
+            await Clients.Group("player_two").SendAsync("UpdateGame", two_hand, two_count, play_two, play_one, one_count);
         }
 
         public async Task SendMessage(string user, string message)

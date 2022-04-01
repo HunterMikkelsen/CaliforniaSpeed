@@ -88,7 +88,7 @@
             var shuffled_cards = cards.OrderBy(a => Random.Next()).ToList();
         }
 
-        public List<string> getHand(string player_number)
+        public List<string> GetHand(string player_number)
         {
             var hand = new List<string>();
             if (player_number == "player_one")
@@ -106,6 +106,66 @@
                 }
             }
             return hand;
+        }
+
+        public bool PlayCard(string player_number, int hand_index, string play_pile)
+        {
+            int pile_value;
+            int card_value;
+            List<Card> pile;
+
+
+            if (play_pile == "play_pile_one")
+            {
+                pile = PlayPileOne;
+                pile_value = PlayPileOne.Last().Value;
+            }
+            else
+            {
+                pile = PlayPileTwo;
+                pile_value = PlayPileTwo.Last().Value;
+            }
+
+            if (player_number == "player_one")
+            {
+                card_value = PlayerOneHand[hand_index].Value;
+                if(IsValidPlay(card_value, pile_value))
+                {
+                    var card = PlayerOneHand[hand_index];
+                    pile.Add(card);
+                    PlayerOneHand.Remove(card);
+                    card = PlayerOneDeck.Last();
+                    PlayerOneHand.Add(card);
+                    PlayerOneDeck.Remove(card);
+                    return true;
+                }
+            }
+            else
+            {
+                card_value = PlayerTwoHand[hand_index].Value;
+                if (IsValidPlay(card_value, pile_value))
+                {
+                    var card = PlayerTwoHand[hand_index];
+                    pile.Add(card);
+                    PlayerTwoHand.Remove(card);
+                    card = PlayerTwoDeck.Last();
+                    PlayerTwoHand.Add(card);
+                    PlayerTwoDeck.Remove(card);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
+        public bool IsValidPlay(int card_value, int pile_value)
+        {
+            if (card_value - 1 % 13 == pile_value || card_value + 1 % 13 == pile_value)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 

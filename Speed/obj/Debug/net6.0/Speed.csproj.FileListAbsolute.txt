@@ -105,3 +105,7 @@ C:\Users\Hunter Mikkelsen\Documents\GitHub\CS3750_Speed\Speed\obj\Debug\net6.0\r
 C:\Users\Hunter Mikkelsen\Documents\GitHub\CS3750_Speed\Speed\obj\Debug\net6.0\Speed.pdb
 C:\Users\Hunter Mikkelsen\Documents\GitHub\CS3750_Speed\Speed\obj\Debug\net6.0\Speed.genruntimeconfig.cache
 C:\Users\Hunter Mikkelsen\Documents\GitHub\CS3750_Speed\Speed\obj\Debug\net6.0\ref\Speed.dll
+C:\Users\chase\Documents\School\CS 3750\CS3750_Speed\Speed\bin\Debug\net6.0\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\chase\Documents\School\CS 3750\CS3750_Speed\Speed\obj\Debug\net6.0\Speed.csproj.CopyComplete
+C:\Users\chase\Documents\School\CS 3750\CS3750_Speed\Speed\bin\Debug\net6.0\package-lock.json
+C:\Users\chase\Documents\School\CS 3750\CS3750_Speed\Speed\bin\Debug\net6.0\package.json

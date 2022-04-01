@@ -4,7 +4,7 @@
     ViewData["Title"] = "Speed";
 }
 <div id="waiting_for_game">
-    <h1>Waiting for game to start</h1>
+    <h1 class="text-center">Waiting for Opponent to Join Game</h1>
 </div>
 
 <div id="game_div">
@@ -24,10 +24,14 @@
             <img id="pick_one" class="img-fluid" src="../lib/cards/card_back.png"/>
         </div>
         <div class="col col-md-2 col-sm-2">
-            <img id="play_pile_one" class="img-fluid" src="../lib/cards/card_back.png"/>
+            <div class="dropzone" id="play_pile_one">
+                <img id="pile_one" class="img-fluid" src="../lib/cards/card_back.png"/>
+            </div>
         </div>
         <div class="col col-md-2 col-sm-2">
-            <img id="play_pile_two" class="img-fluid" src="../lib/cards/card_back.png"/>
+            <div class="dropzone" id="play_pile_two">
+                <img id="pile_two" class="img-fluid" src="../lib/cards/card_back.png"/>
+            </div>
         </div>
         <div class="col col-md-2 col-sm-2">
             <img id="pick_two" class="img-fluid" src="../lib/cards/card_back.png"/>
@@ -37,7 +41,9 @@
         @for(int i = 0; i < 5; i ++)
         {
             <div class="col col-md-2 col-sm-2">
-                <img id="player_hand_@i" class="player_hand img-fluid" src="../lib/cards/card_back.png"/>
+                <p class="drag" id="@i">
+                    <img id="my_hand_@i" class="player_hand img-fluid" src="../lib/cards/card_back.png"/>
+                </p>
             </div>
         }
         <div class="col col-md-2 col-sm-2" style="background-image: url('../lib/cards/card_back.png'); background-repeat: no-repeat; background-size: contain; background-position: center;">
@@ -46,64 +52,8 @@
     </div>
 </div>
 
-
-@*<div id="game_div">
-    <div class="row">
-        <!--Player one's deck of cards-->
-        <div class="col col-md-2 col-sm-2" style="background-image: url('../lib/cards/card_back.png'); background-repeat: no-repeat; background-size: contain; background-position: center;">
-            <h1 class="text-center text-white" style="margin: 50% auto;">@Model.PlayerOneDeck.Count</h1>
-        </div>
-        <!--Player one's hand of cards-->
-        @foreach(var card in Model.PlayerOneHand)
-        {
-            <div class="col col-md-2 col-sm-2">   
-                <img class="img-fluid" src="../lib/cards/@card.Image"/>
-            </div>
-        }   
-    </div>
-    <br />
-    <br />
-    <div class="row">
-        <!--Pick Pile One-->
-        <div class="col col-md-2 col-sm-2 offset-2">
-            <img class="img-fluid" src="../lib/cards/card_back.png"/>
-        </div>
-        <!--Play Pile One-->
-        @foreach(var card in Model.PlayPileOne)
-        {
-            <div class="col col-md-2 col-sm-2">
-                <img class="img-fluid" src="../lib/cards/@card.Image"/>
-            </div>
-        }   
-        <!--Play Pile Two-->
-        @foreach(var card in Model.PlayPileTwo)
-        {
-            <div class="col col-md-2 col-sm-2">
-                <img class="img-fluid" src="../lib/cards/@card.Image"/>
-            </div>
-        }   
-        <!--Pick Pile Two-->
-        <div class="col col-md-2 col-sm-2">
-            <img class="img-fluid" src="../lib/cards/card_back.png"/>
-        </div>
-    </div>
-
-    <br />
-    <br />
-
-    <div class="row">
-        <!--Player two's hand of cards-->
-        @foreach(var card in Model.PlayerTwoHand)
-        {
-            <div class="col col-md-2 col-sm-2">
-                <img class="img-fluid" src="../lib/cards/@card.Image"/>
-            </div>
-        } 
-        <!--Player two's deck of cards-->
-         <div class="col col-md-2 col-sm-2" style="background-image: url('../lib/cards/card_back.png'); background-repeat: no-repeat; background-size: contain; background-position: center;">
-            <h1 class="text-center text-white" style="margin: 50% auto;">@Model.PlayerTwoDeck.Count</h1>
-        </div>  
-    </div>
-</div>*@
-<script src="~/js/signalr/dist/browser/signalr.js"></script>
-<script src="~/js/game.js"></script>
+<!-- partial -->
+<script src='~/js/signalr/dist/browser/signalr.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+<script src="~/js/gameQuery.js"></script>
