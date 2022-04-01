@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chase\\Documents\\School\\CS 3750\\CS3750_Speed\\Speed\\Speed.csproj": {}
+    "C:\\Users\\Hunter Mikkelsen\\Documents\\GitHub\\CS3750_Speed\\Speed\\Speed.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chase\\Documents\\School\\CS 3750\\CS3750_Speed\\Speed\\Speed.csproj": {
+    "C:\\Users\\Hunter Mikkelsen\\Documents\\GitHub\\CS3750_Speed\\Speed\\Speed.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chase\\Documents\\School\\CS 3750\\CS3750_Speed\\Speed\\Speed.csproj",
+        "projectUniqueName": "C:\\Users\\Hunter Mikkelsen\\Documents\\GitHub\\CS3750_Speed\\Speed\\Speed.csproj",
         "projectName": "Speed",
-        "projectPath": "C:\\Users\\chase\\Documents\\School\\CS 3750\\CS3750_Speed\\Speed\\Speed.csproj",
-        "packagesPath": "C:\\Users\\chase\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chase\\Documents\\School\\CS 3750\\CS3750_Speed\\Speed\\obj\\",
+        "projectPath": "C:\\Users\\Hunter Mikkelsen\\Documents\\GitHub\\CS3750_Speed\\Speed\\Speed.csproj",
+        "packagesPath": "C:\\Users\\Hunter Mikkelsen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hunter Mikkelsen\\Documents\\GitHub\\CS3750_Speed\\Speed\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chase\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hunter Mikkelsen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +57,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
