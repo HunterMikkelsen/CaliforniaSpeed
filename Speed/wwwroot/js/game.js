@@ -1,4 +1,5 @@
 ﻿$('#game_div').hide();
+$('#speed_btn').hide();
 
 
 var connection = new signalR.HubConnectionBuilder().withUrl("/gameHub").build();
@@ -19,8 +20,10 @@ connection.on("UpdatePlayer", function (player_number) {
     }
 });
 
-connection.on("UpdateGame", function (my_hand, my_count, play_one, play_two, opp_count) {
-
+connection.on("UpdateGame", function (my_hand, my_count, play_one, play_two, opp_count, opp_hand_count) {
+    if (my_hand.length == 0) {
+        $('#speed_btn').show();
+    }
     $('#game_div').show();
     $('#waiting_for_game').hide();
     player_count.innerHTML = my_count;
@@ -32,11 +35,13 @@ connection.on("UpdateGame", function (my_hand, my_count, play_one, play_two, opp
         console.log(element);
         cards[index].src = "../lib/cards/" + element;
     });
-    //my_hand_0.src = "../lib/cards/" + my_hand[0];
-    //my_hand_1.src = "../lib/cards/" + my_hand[1];
-    //my_hand_2.src = "../lib/cards/" + my_hand[2];
-    //my_hand_3.src = "../lib/cards/" + my_hand[3];
-    //my_hand_4.src = "../lib/cards/" + my_hand[4];
+    for (let i = 0; i < cards.length - my_hand.length; i++) {
+        $(cards).last().remove();
+    }
+    opp_hand = $('.opp_hand');
+    for (let i = 0; i < opp_hand.length - opp_hand_count; i++) {
+        $(opp_hand).last().remove();
+    }
 });
 
 connection.on("ReceiveMessage", function (message) {

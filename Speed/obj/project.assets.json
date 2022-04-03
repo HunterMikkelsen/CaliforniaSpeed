@@ -36,19 +36,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LandonGeorge\\.nuget\\packages\\": {}
+    "C:\\Users\\chase\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LandonGeorge\\Desktop\\school\\CS3750\\CS3750_Speed\\Speed\\Speed.csproj",
+      "projectUniqueName": "C:\\Users\\chase\\Documents\\School\\CS 3750\\CS3750_Speed\\Speed\\Speed.csproj",
       "projectName": "Speed",
-      "projectPath": "C:\\Users\\LandonGeorge\\Desktop\\school\\CS3750\\CS3750_Speed\\Speed\\Speed.csproj",
-      "packagesPath": "C:\\Users\\LandonGeorge\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LandonGeorge\\Desktop\\school\\CS3750\\CS3750_Speed\\Speed\\obj\\",
+      "projectPath": "C:\\Users\\chase\\Documents\\School\\CS 3750\\CS3750_Speed\\Speed\\Speed.csproj",
+      "packagesPath": "C:\\Users\\chase\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\chase\\Documents\\School\\CS 3750\\CS3750_Speed\\Speed\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\LandonGeorge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chase\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

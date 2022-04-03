@@ -149,8 +149,12 @@
                 {
                     var card = PlayerTwoHand[hand_index];
                     moveCard(pile, PlayerTwoHand, card);
-                    card = PlayerTwoDeck.Last();
-                    moveCard(PlayerTwoHand, PlayerTwoDeck, card);
+                    if(PlayerTwoDeck.Count() > 0)
+                    {
+                        card = PlayerTwoDeck.Last();
+                        moveCard(PlayerTwoHand, PlayerTwoDeck, card);
+                    }
+                    
                     return true;
                 }
             }
