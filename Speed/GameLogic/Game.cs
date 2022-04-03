@@ -135,10 +135,14 @@
                     //pile.Add(card);
                     //PlayerOneHand.Remove(card);
                     moveCard(pile,PlayerOneHand,card);
-                    card = PlayerOneDeck.Last();
-                    //PlayerOneHand.Add(card);
-                    //PlayerOneDeck.Remove(card);
-                    moveCard(PlayerOneHand,PlayerOneDeck,card);
+                    if(PlayerOneDeck.Count() > 0)
+                    {
+                        card = PlayerOneDeck.Last();
+                        //PlayerOneHand.Add(card);
+                        //PlayerOneDeck.Remove(card);
+                        moveCard(PlayerOneHand,PlayerOneDeck,card);
+                    }
+                    
                     return true;
                 }
             }
@@ -151,10 +155,14 @@
                     //pile.Add(card);
                     //PlayerTwoHand.Remove(card);
                     moveCard(pile, PlayerTwoHand, card);
-                    card = PlayerTwoDeck.Last();
-                    //PlayerTwoHand.Add(card);
-                    //PlayerTwoDeck.Remove(card);
-                    moveCard(PlayerTwoHand, PlayerTwoDeck, card);
+                    if(PlayerTwoDeck.Count() > 0)
+                    {
+                        card = PlayerTwoDeck.Last();
+                        //PlayerTwoHand.Add(card);
+                        //PlayerTwoDeck.Remove(card);
+                        moveCard(PlayerTwoHand, PlayerTwoDeck, card);
+                    }
+                    
                     return true;
                 }
             }

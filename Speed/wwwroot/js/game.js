@@ -27,11 +27,16 @@ connection.on("UpdateGame", function (my_hand, my_count, play_one, play_two, opp
     other_count.innerHTML = opp_count;
     pile_one.src = "../lib/cards/" + play_one;
     pile_two.src = "../lib/cards/" + play_two;
-    my_hand_0.src = "../lib/cards/" + my_hand[0];
-    my_hand_1.src = "../lib/cards/" + my_hand[1];
-    my_hand_2.src = "../lib/cards/" + my_hand[2];
-    my_hand_3.src = "../lib/cards/" + my_hand[3];
-    my_hand_4.src = "../lib/cards/" + my_hand[4];
+    cards = $('.drag').children();
+    $(my_hand).each(function (index, element) {
+        console.log(element);
+        cards[index].src = "../lib/cards/" + element;
+    });
+    //my_hand_0.src = "../lib/cards/" + my_hand[0];
+    //my_hand_1.src = "../lib/cards/" + my_hand[1];
+    //my_hand_2.src = "../lib/cards/" + my_hand[2];
+    //my_hand_3.src = "../lib/cards/" + my_hand[3];
+    //my_hand_4.src = "../lib/cards/" + my_hand[4];
 });
 
 connection.on("ReceiveMessage", function (message) {
