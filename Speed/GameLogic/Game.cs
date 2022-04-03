@@ -132,13 +132,11 @@
                 if(IsValidPlay(card_value, pile_value))
                 {
                     var card = PlayerOneHand[hand_index];
-                    //pile.Add(card);
-                    //PlayerOneHand.Remove(card);
                     moveCard(pile,PlayerOneHand,card);
+
                     card = PlayerOneDeck.Last();
-                    //PlayerOneHand.Add(card);
-                    //PlayerOneDeck.Remove(card);
                     moveCard(PlayerOneHand,PlayerOneDeck,card);
+
                     return true;
                 }
             }
@@ -148,13 +146,11 @@
                 if (IsValidPlay(card_value, pile_value))
                 {
                     var card = PlayerTwoHand[hand_index];
-                    //pile.Add(card);
-                    //PlayerTwoHand.Remove(card);
                     moveCard(pile, PlayerTwoHand, card);
+
                     card = PlayerTwoDeck.Last();
-                    //PlayerTwoHand.Add(card);
-                    //PlayerTwoDeck.Remove(card);
                     moveCard(PlayerTwoHand, PlayerTwoDeck, card);
+
                     return true;
                 }
             }
@@ -187,8 +183,10 @@
                 {
                     newPlayPileCard = PickPileOne.Last();
                     moveCard(PlayPileOne, PickPileOne, newPlayPileCard);
+
                     newPlayPileCard = PickPileTwo.Last();
                     moveCard(PlayPileTwo,PickPileTwo, newPlayPileCard);
+
                     Console.WriteLine("Drew new cards for playPiles");
                 }
             }
@@ -222,12 +220,7 @@
             return false;
         }
 
-        /// <summary>
-        /// Moves specified card from an origin pile to a destination pile
-        /// </summary>
-        /// <param name="destinationPile">Pile you want to move the specified card to</param>
-        /// <param name="originPile">Pile you're taking the specified card from</param>
-        /// <param name="takenCard">Specific card you're taking from your originPile</param>
+        //Moves specified card from an origin pile to a destination pile
         public void moveCard(List<Card> destinationPile, List<Card> originPile, Card takenCard )
         {
             //Specified card to be moved

@@ -46,9 +46,9 @@ namespace Speed.Hubs
             game.playPilesPlayable();
         }
 
-        public void PlayCard(string player_number, string hand_index, string play_pile)
+        public void cardPlayable(string player_number, string hand_index, string play_pile)
         {
-            game.PlayCard(player_number, int.Parse(hand_index), play_pile);
+            game.isCardPlayable(player_number, int.Parse(hand_index), play_pile);
             UpdateHands();
         }
 
