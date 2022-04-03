@@ -132,11 +132,13 @@
                 if(IsValidPlay(card_value, pile_value))
                 {
                     var card = PlayerOneHand[hand_index];
-                    pile.Add(card);
-                    PlayerOneHand.Remove(card);
+                    //pile.Add(card);
+                    //PlayerOneHand.Remove(card);
+                    moveCard(pile,PlayerOneHand,card);
                     card = PlayerOneDeck.Last();
-                    PlayerOneHand.Add(card);
-                    PlayerOneDeck.Remove(card);
+                    //PlayerOneHand.Add(card);
+                    //PlayerOneDeck.Remove(card);
+                    moveCard(PlayerOneHand,PlayerOneDeck,card);
                     return true;
                 }
             }
@@ -146,11 +148,13 @@
                 if (IsValidPlay(card_value, pile_value))
                 {
                     var card = PlayerTwoHand[hand_index];
-                    pile.Add(card);
-                    PlayerTwoHand.Remove(card);
+                    //pile.Add(card);
+                    //PlayerTwoHand.Remove(card);
+                    moveCard(pile, PlayerTwoHand, card);
                     card = PlayerTwoDeck.Last();
-                    PlayerTwoHand.Add(card);
-                    PlayerTwoDeck.Remove(card);
+                    //PlayerTwoHand.Add(card);
+                    //PlayerTwoDeck.Remove(card);
+                    moveCard(PlayerTwoHand, PlayerTwoDeck, card);
                     return true;
                 }
             }
@@ -166,6 +170,73 @@
             }
 
             return false;
+        }
+
+        public void playPilesPlayable()
+        {
+            Card newPlayPileCard;
+
+            if(!playerHandPlayable(PlayerOneHand) || !playerHandPlayable(PlayerTwoHand))
+            {
+                if(PickPileOne.Last() == null && PickPileTwo.Last() == null)
+                {
+                    Reshuffle();
+                    Console.WriteLine("Reshuffled deck");
+                }
+                else
+                {
+                    newPlayPileCard = PickPileOne.Last();
+                    moveCard(PlayPileOne, PickPileOne, newPlayPileCard);
+                    newPlayPileCard = PickPileTwo.Last();
+                    moveCard(PlayPileTwo,PickPileTwo, newPlayPileCard);
+                    Console.WriteLine("Drew new cards for playPiles");
+                }
+            }
+        }
+
+        public bool playerHandPlayable(List<Card> playerHand)
+        {
+            bool pileOnePlayable = false;
+            bool pileTwoPlayable = false;
+
+            //Check player ones hand against both playable piles
+            foreach (var card in playerHand)
+            {
+                if ((card.Value + 1) % 13 == PlayPileOne.Last().Value || (PlayPileOne.Last().Value + 1) % 13 == card.Value)
+                {
+                    pileOnePlayable = true;
+                }
+
+                if ((card.Value + 1) % 13 == PlayPileTwo.Last().Value || (PlayPileTwo.Last().Value + 1) % 13 == card.Value)
+                {
+                    pileTwoPlayable = true;
+                }
+
+            }
+
+            if(pileOnePlayable && pileTwoPlayable)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Moves specified card from an origin pile to a destination pile
+        /// </summary>
+        /// <param name="destinationPile">Pile you want to move the specified card to</param>
+        /// <param name="originPile">Pile you're taking the specified card from</param>
+        /// <param name="takenCard">Specific card you're taking from your originPile</param>
+        public void moveCard(List<Card> destinationPile, List<Card> originPile, Card takenCard )
+        {
+            //Specified card to be moved
+            Card card = takenCard;
+
+            //Moves the specified card to the specified destination pile
+            destinationPile.Add(card);
+            //Removes the specified card from the origin pile
+            originPile.Remove(card);
         }
     }
 

@@ -41,6 +41,11 @@ namespace Speed.Hubs
             
         }
 
+        public void playPilesPlayable()
+        {
+            game.playPilesPlayable();
+        }
+
         public void PlayCard(string player_number, string hand_index, string play_pile)
         {
             game.PlayCard(player_number, int.Parse(hand_index), play_pile);
@@ -49,6 +54,7 @@ namespace Speed.Hubs
 
         public async Task UpdateHands()
         {
+            playPilesPlayable();
             var one_hand = game.GetHand("player_one");
             var two_hand = game.GetHand("player_two");
             var one_count = game.PlayerOneDeck.Count();

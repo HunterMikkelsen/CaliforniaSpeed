@@ -109,3 +109,8 @@ C:\Users\chase\Documents\School\CS 3750\CS3750_Speed\Speed\bin\Debug\net6.0\Micr
 C:\Users\chase\Documents\School\CS 3750\CS3750_Speed\Speed\obj\Debug\net6.0\Speed.csproj.CopyComplete
 C:\Users\chase\Documents\School\CS 3750\CS3750_Speed\Speed\bin\Debug\net6.0\package-lock.json
 C:\Users\chase\Documents\School\CS 3750\CS3750_Speed\Speed\bin\Debug\net6.0\package.json
+C:\Users\LandonGeorge\Desktop\school\CS3750\CS3750_Speed\Speed\bin\Debug\net6.0\libman.json
+C:\Users\LandonGeorge\Desktop\school\CS3750\CS3750_Speed\Speed\bin\Debug\net6.0\package-lock.json
+C:\Users\LandonGeorge\Desktop\school\CS3750\CS3750_Speed\Speed\bin\Debug\net6.0\package.json
+C:\Users\LandonGeorge\Desktop\school\CS3750\CS3750_Speed\Speed\bin\Debug\net6.0\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\LandonGeorge\Desktop\school\CS3750\CS3750_Speed\Speed\obj\Debug\net6.0\Speed.csproj.CopyComplete
