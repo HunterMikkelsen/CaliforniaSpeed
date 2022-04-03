@@ -176,7 +176,7 @@
         {
             Card newPlayPileCard;
 
-            if(!playerHandPlayable(PlayerOneHand) || !playerHandPlayable(PlayerTwoHand))
+            while(!playerHandPlayable(PlayerOneHand) && !playerHandPlayable(PlayerTwoHand))
             {
                 if(PickPileOne.Last() == null && PickPileTwo.Last() == null)
                 {
@@ -214,7 +214,7 @@
 
             }
 
-            if(pileOnePlayable && pileTwoPlayable)
+            if(pileOnePlayable || pileTwoPlayable)
             {
                 return true;
             }
