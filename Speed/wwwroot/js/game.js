@@ -56,7 +56,7 @@ connection.on("ReceiveMessage", function (message) {
 connection.on("GameOver", function (message) {
     $('#game_div').hide();
     $('#game_over').show();
-    $('#game_over').innerHTML = message;
+    $('#game_over').text(message);
 });
 
 $('.drag').draggable({
