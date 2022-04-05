@@ -41,10 +41,10 @@ namespace Speed.Hubs
             
         }
 
-        public void PlayCard(string player_number, string hand_index, string play_pile)
+        public async void PlayCard(string player_number, string hand_index, string play_pile)
         {
             game.PlayCard(player_number, int.Parse(hand_index), play_pile);
-            UpdateHands();
+            await UpdateHands();
         }
 
         public async Task UpdateHands()
@@ -59,6 +59,26 @@ namespace Speed.Hubs
 
             await Clients.Group("player_one").SendAsync("UpdateGame", one_hand, one_count, play_one, play_two, two_count, two_hand.Count());
             await Clients.Group("player_two").SendAsync("UpdateGame", two_hand, two_count, play_one, play_two, one_count, one_hand.Count());
+        }
+
+        public async Task Speed()
+        {
+            if (player_one == Context.ConnectionId)
+            {
+                if (game.PlayerOneHand.Count() == 0)
+                {
+                    await Clients.Group("player_one").SendAsync("GameOver", "Congratulations! You Won!");
+                    await Clients.Group("player_two").SendAsync("GameOver", "Game Over. You lose. Better Luck Next Time!");
+                }
+            }
+            else if (player_two == Context.ConnectionId)
+            {
+                if (game.PlayerTwoHand.Count() == 0)
+                {
+                    await Clients.Group("player_one").SendAsync("GameOver", "Congratulations! You Won!");
+                    await Clients.Group("player_two").SendAsync("GameOver", "Game Over. You lose. Better Luck Next Time!");
+                }
+            }
         }
 
         public async Task SendMessage(string user, string message)

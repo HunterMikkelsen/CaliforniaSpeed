@@ -79,13 +79,32 @@
             foreach (var card in PlayPileOne)
             {
                 cards.Add(card);
+                PlayPileOne.Remove(card);
             }
             foreach (var card in PlayPileTwo)
             {
                 cards.Add(card);
+                PlayPileTwo.Remove(card);
             }
 
             var shuffled_cards = cards.OrderBy(a => Random.Next()).ToList();
+
+            var half = shuffled_cards.Count() / 2;
+            for(int i = 0; i < shuffled_cards.Count; i++)
+            {
+                var card = shuffled_cards[i];
+                if(i < half)
+                {
+                    PlayPileOne.Add(card);
+                }
+                else
+                {
+                    PlayPileTwo.Add(card);
+                }
+            }
+
+
+
         }
 
         public List<string> GetHand(string player_number)
@@ -178,21 +197,18 @@
 
             while(!playerHandPlayable(PlayerOneHand) && !playerHandPlayable(PlayerTwoHand))
             {
-                if(PickPileOne.Last() == null && PickPileTwo.Last() == null)
+                if(PickPileOne.Count() == 0 || PickPileTwo.Count() == 0)
                 {
                     Reshuffle();
                     Console.WriteLine("Reshuffled deck");
                 }
-                else
-                {
-                    newPlayPileCard = PickPileOne.Last();
-                    moveCard(PlayPileOne, PickPileOne, newPlayPileCard);
+                newPlayPileCard = PickPileOne.Last();
+                moveCard(PlayPileOne, PickPileOne, newPlayPileCard);
 
-                    newPlayPileCard = PickPileTwo.Last();
-                    moveCard(PlayPileTwo,PickPileTwo, newPlayPileCard);
+                newPlayPileCard = PickPileTwo.Last();
+                moveCard(PlayPileTwo,PickPileTwo, newPlayPileCard);
 
-                    Console.WriteLine("Drew new cards for playPiles");
-                }
+                Console.WriteLine("Drew new cards for playPiles");
             }
         }
 

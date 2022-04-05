@@ -1,5 +1,6 @@
 ﻿$('#game_div').hide();
 $('#speed_btn').hide();
+$('#game_over').hide();
 
 
 var connection = new signalR.HubConnectionBuilder().withUrl("/gameHub").build();
@@ -44,8 +45,18 @@ connection.on("UpdateGame", function (my_hand, my_count, play_one, play_two, opp
     }
 });
 
+$('#speed_button').click(function () {
+    connection.invoke("Speed");
+});
+
 connection.on("ReceiveMessage", function (message) {
     console.log(message);
+});
+
+connection.on("GameOver", function (message) {
+    $('#game_div').hide();
+    $('#game_over').show();
+    $('#game_over').innerHTML = message;
 });
 
 $('.drag').draggable({
@@ -68,5 +79,4 @@ $('.dropzone').droppable({
         $(this).removeClass("active");
     }
 });
-
 
