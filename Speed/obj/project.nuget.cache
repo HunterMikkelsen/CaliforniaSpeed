@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "TuQQzMmh4JruZnKTzoLu0fVMqGg9LHF+XnIB2qDHb42cloxAXu6Tl7ptZhj+Mwxex4SvyxewWyUNWZgvn9J7hQ==",
+  "dgSpecHash": "JZ4B2pKrj/Vy5DYUavT28cWsiN0ZAmlN6AmqH6JjYpOZLPKUsDX863vwJJ1IEoJ8OiPNVDtAb5b5YmfoFyqtgg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\chase\\Documents\\School\\CS 3750\\CS3750_Speed\\Speed\\Speed.csproj",
+  "projectFilePath": "C:\\Users\\Hunter Mikkelsen\\Documents\\GitHub\\CS3750_Speed\\Speed\\Speed.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\chase\\.nuget\\packages\\microsoft.aspnet.signalr.core\\2.4.3\\microsoft.aspnet.signalr.core.2.4.3.nupkg.sha512"
+    "C:\\Users\\Hunter Mikkelsen\\.nuget\\packages\\microsoft.aspnet.signalr.core\\2.4.3\\microsoft.aspnet.signalr.core.2.4.3.nupkg.sha512"
   ],
   "logs": [
     {

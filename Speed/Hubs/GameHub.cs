@@ -79,6 +79,10 @@ namespace Speed.Hubs
                     await Clients.Group("player_two").SendAsync("GameOver", "Game Over. You lose. Better Luck Next Time!");
                 }
             }
+            //Reset the players & games after game finished.
+            player_one = null;
+            player_two = null;
+            game = null;
         }
 
         public async Task SendMessage(string user, string message)

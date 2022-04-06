@@ -1,6 +1,5 @@
 ﻿$('#game_div').hide();
 $('#speed_btn').hide();
-$('#game_over').hide();
 
 
 var connection = new signalR.HubConnectionBuilder().withUrl("/gameHub").build();
@@ -49,14 +48,21 @@ $('#speed_button').click(function () {
     connection.invoke("Speed");
 });
 
+$('#game_over_playagain').click(function () {
+    jQuery('#game_div').hide();
+    jQuery('#speed_btn').hide();
+    jQuery('#waiting_for_game').show();
+    connection.invoke('JoinGame', connection.connectionId);
+});
+
 connection.on("ReceiveMessage", function (message) {
     console.log(message);
 });
 
 connection.on("GameOver", function (message) {
-    $('#game_div').hide();
-    $('#game_over').show();
-    $('#game_over').text(message);
+    $('#game_over_message').text(message);
+    jQuery.noConflict();
+    jQuery('#game_over').modal("show");
 });
 
 $('.drag').draggable({

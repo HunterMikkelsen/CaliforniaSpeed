@@ -7,7 +7,23 @@
     <h1 class="text-center">Waiting for Opponent to Join Game</h1>
 </div>
 
-<h1 id="game_over" class="text-center"></h1>
+<!-- Modal -->
+<div id="game_over" class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Game Over</h5>
+        @*<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>*@
+      </div>
+      <div id="game_over_message" class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button id="game_over_gohome" type="submit" class="btn btn-secondary" data-bs-dismiss="modal" asp-page="/Index">Home</button>
+        <button id="game_over_playagain" type="submit" class="btn btn-primary" data-bs-dismiss="modal" asp-page="/Game">Play again</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div id="game_div">
     <div class="row border border-danger border-3 rounded bg-danger">
