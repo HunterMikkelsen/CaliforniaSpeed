@@ -36,7 +36,7 @@ namespace Speed.Hubs
                 game = new Game();
             }
             if ((!string.IsNullOrEmpty(player_one)) && (!string.IsNullOrEmpty(player_two))) {
-                UpdateHands();
+                await UpdateHands();
             }
             
         }
@@ -75,11 +75,13 @@ namespace Speed.Hubs
             {
                 if (game.PlayerTwoHand.Count() == 0)
                 {
-                    await Clients.Group("player_one").SendAsync("GameOver", "Congratulations! You Won!");
-                    await Clients.Group("player_two").SendAsync("GameOver", "Game Over. You lose. Better Luck Next Time!");
+                    await Clients.Group("player_two").SendAsync("GameOver", "Congratulations! You Won!");
+                    await Clients.Group("player_one").SendAsync("GameOver", "Game Over. You lose. Better Luck Next Time!");
                 }
             }
             //Reset the players & games after game finished.
+            await Groups.RemoveFromGroupAsync(player_one, "player_one");
+            await Groups.RemoveFromGroupAsync(player_two, "player_two");
             player_one = null;
             player_two = null;
             game = null;
