@@ -60,11 +60,6 @@ $('#game_over_playagain').click(function () {
             opp_cards[i].appendChild(child);
         }
     }
-    //opp_cards.each(function (index, div) {
-    //    if (!div.hasChildNodes()) {
-    //        div.append('<img class="opp_hand img-fluid" src="../lib/cards/card_back.png"/>');
-    //    }
-    //});
     for (let i = 0; i < my_hand.length; i++) {
         if (!my_hand[i].childElementCount > 0) {
             var child = document.createElement("img");
@@ -74,11 +69,6 @@ $('#game_over_playagain').click(function () {
             my_hand[i].appendChild(child);
         }
     }
-    //my_hand.each(function (index, div) {
-    //    if (!div.hasChildNodes()) {
-    //        div.append('<img id="my_hand_' + index + '" class="player_hand img-fluid" src="../lib/cards/card_back.png"/>')
-    //    }
-    //});
     $('#game_div').hide();
     $('#speed_btn').hide();
     $('#waiting_for_game').show();
