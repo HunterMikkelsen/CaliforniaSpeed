@@ -79,13 +79,14 @@
             foreach (var card in PlayPileOne)
             {
                 cards.Add(card);
-                PlayPileOne.Remove(card);
             }
             foreach (var card in PlayPileTwo)
             {
                 cards.Add(card);
-                PlayPileTwo.Remove(card);
             }
+
+            PlayPileOne.Clear();
+            PlayPileTwo.Clear();
 
             var shuffled_cards = cards.OrderBy(a => Random.Next()).ToList();
 
@@ -95,16 +96,13 @@
                 var card = shuffled_cards[i];
                 if(i < half)
                 {
-                    PlayPileOne.Add(card);
+                    PickPileOne.Add(card);
                 }
                 else
                 {
-                    PlayPileTwo.Add(card);
+                    PickPileTwo.Add(card);
                 }
             }
-
-
-
         }
 
         public List<string> GetHand(string player_number)

@@ -6,7 +6,6 @@ var connection = new signalR.HubConnectionBuilder().withUrl("/gameHub").build();
 var connectionId = (Math.random() + 1).toString(36).substring(7);
 var player = "";
 connection.start().then(function () {
-    //connectionId = connection.connection.connectionId;
     connection.invoke('JoinGame', connection.connectionId);
 }).catch(function (err) {
     return console.error(err.toString());
